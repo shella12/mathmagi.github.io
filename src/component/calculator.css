@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calculator{
+    margin:20px 20%;
+    border:1px solid black;
+    display: flex;
+    flex-direction:column;
+    width:45rem;
+    
+}
+.panel{
+    background-color: grey;
+    text-align: end;
+    padding:1rem;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.buttons div{
+    background-color: lightgray;
+    border:.5px solid black;
+    text-align:center;
+    padding:20px;
+}
+
+.buttons div.zero-span{
+    grid-column: 1/span 2;
+}
+.buttons div.orange{
+    background-color: orange; 
+}
