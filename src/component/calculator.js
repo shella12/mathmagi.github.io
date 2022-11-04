@@ -1,83 +1,46 @@
 import React from 'react';
-import Panel from './panel';
 import './calculator.css';
 import calculate from '../logic/calculate';
-import operate from '../logic/operate';
 
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: null,
+      total: '0',
       next: null,
       operation: null,
-      panel: '',
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleKeyPress = (e) => {
-    this.setState((state) => ({
-      panel: state.panel + e.target.value,
-    }));
-    console.log(e.target.value);
     const { total, next, operation } = this.state;
-    const obj = {
-      t: total,
-      n: next,
-      o: operation,
-    };
+    const obj = { total, next, operation };
     const result = calculate(obj, e.target.value);
-    console.log(result);
-    if ((operation === null && result.operation === null)
-     || (operation === null && !result.operation)) {
-      if (total === null) {
-        this.setState(() => ({
-          total: result.next,
-        }));
-      } else {
-        this.setState((state) => ({
-          total: state.total + result.next,
-        }));
-      }
-      console.log(total);
-    } else if (result.operation && result.operation !== null) {
-      if (operation === null) {
-        this.setState(() => ({
-          operation: result.operation,
-        }));
-      } else if (operation !== null && next === null) {
-        this.setState(() => ({
-          operation: result.operation,
-        }));
-      } else {
-        this.setState((state) => ({
-          total: operate(Number(state.total), Number(state.next), state.operation),
-          next: null,
-          operation: result.operation,
-        }));
-      }
-      console.log(operation);
+    if (e.target.value === 'AC') {
+      this.setState(() => ({
+        total: '0',
+        next: result.next,
+        operation: result.operation,
+      }));
     } else {
-      if (next === null) {
-        this.setState(() => ({
-          next: result.next,
-        }));
-      } else {
-        this.setState((state) => ({
-          next: state.next + result.next,
-        }));
-      }
-      console.log(next);
+      this.setState(() => ({
+        total: result.total,
+        next: result.next,
+        operation: result.operation,
+      }));
     }
-    console.log(`${total} , ${next} , ${operation}`);
   }
 
   render() {
-    const { panel } = this.state;
+    const { total, next, operation } = this.state;
     return (
       <div className="calculator">
-        <div className="panel"><Panel panel={panel} /></div>
+        <div className="panel">
+          {total}
+          {operation}
+          {next}
+        </div>
         <div className="buttons">
           <button type="button" value="AC" onClick={this.handleKeyPress}>AC</button>
           <button type="button" value="+/-" onClick={this.handleKeyPress}>+/-</button>
