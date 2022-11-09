@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 
-.main-content{
+.main-content {
   display: flex;
   padding: 4rem;
   justify-content: space-around;
   gap: 5rem;
 }
 
-.text{
-font-size: 1.4rem;
+.text {
+  font-size: 1.4rem;
 }
 
 .calculator {
