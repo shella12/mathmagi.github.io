@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  padding: 4rem;
+  justify-content: space-around;
+  gap: 5rem;
+}
+
+.text {
+  font-size: 1.4rem;
+}
+
+.calculator {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  background-color: grey;
+  text-align: end;
+  padding: 1rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.buttons button {
+  background-color: lightgray;
+  border: 0.5px solid black;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.buttons button.zero-span {
+  grid-column: 1/span 2;
+}
+
+.buttons button.orange {
+  background-color: orange;
+}
