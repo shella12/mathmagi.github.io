@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test suite for components renders correctly calculator component 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+  page="http://localhost:3000/calculator"
+>
+  Calculator
+</a>
+`;
+
+exports[`test suite for components renders correctly home component 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+  page="http://localhost:3000/"
+>
+  Home
+</a>
+`;
+
+exports[`test suite for components renders correctly quote component 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+  page="http://localhost:3000/quote"
+>
+  Quote
+</a>
+`;
