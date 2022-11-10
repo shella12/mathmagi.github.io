@@ -50,7 +50,7 @@ Make simple calculations and read a random math-related quote.
 
 ## Live Demo
 
-Click here to see the [Live Demo](https://shella12.github.io/mathmagi.github.io/public) of the website 
+Click here to see the [Live Demo](https://636d4335ca433e14cbbda6f5--lovely-frangipane-389b3a.netlify.app/) of the website 
 
 ## 👤 Author
 
